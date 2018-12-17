@@ -18,7 +18,7 @@
  * @param {ListNode} l2
  * @return {ListNode}
  */
-var addTwoNumbers = function(l1, l2) {
+var addTwoNumbers = (l1, l2) => {
     let cur = new ListNode(0), dummy = new ListNode(0), carry = 0;
     dummy.next = cur;
     while (l1 || l2 || carry !== 0) {
