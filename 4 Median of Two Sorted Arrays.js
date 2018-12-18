@@ -33,5 +33,3 @@ var findMedianSortedArrays = (nums1, nums2) => {
 
 //Test
 console.log(findMedianSortedArrays([1, 2], [3, 4]));
-
-//Runtime: 104ms

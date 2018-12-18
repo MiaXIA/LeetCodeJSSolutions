@@ -9,7 +9,7 @@
  * @param {string} s
  * @return {number}
  */
-var lengthOfLongestSubstring = (s) => {
+var lengthOfLongestSubstring = s => {
     const map = new Map();
     let left = 0;
     let maxLength = 0;
@@ -30,5 +30,3 @@ var lengthOfLongestSubstring = (s) => {
 
 //Test
 console.log(lengthOfLongestSubstring('abcabcbb'));
-
-//Runtime: 128ms

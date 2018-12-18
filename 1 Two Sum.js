@@ -22,5 +22,3 @@ var twoSum = (nums, target) => {
 
 //Test
 console.log(twoSum([2, 7, 11, 15], 9));
-
-//Runtime: 64ms

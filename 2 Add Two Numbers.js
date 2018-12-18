@@ -31,5 +31,3 @@ var addTwoNumbers = (l1, l2) => {
     }
     return dummy.next.next;
 };
-
-//Runtime: 128ms
