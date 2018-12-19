@@ -17,7 +17,7 @@
 var threeSum = nums => {
 	var res = [];
 	if (nums.length < 3) return res;
-	nums = nums.sort((a, b) => {return a - b;});
+	nums = nums.sort((a, b) => a - b);
 	for (var i = 0; i < nums.length - 2; i++) {
 		if (nums[i] > 0) return res;
 		if (i > 0 && nums[i] === nums[i - 1]) continue;
