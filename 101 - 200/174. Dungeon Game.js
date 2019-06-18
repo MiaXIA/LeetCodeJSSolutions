@@ -13,3 +13,30 @@
 // The knight's health has no upper bound.
 // Any room can contain threats or power-ups, even the first room the knight enters and the bottom-right room where the princess is imprisoned.
 
+/**
+ * @param {number[][]} dungeon
+ * @return {number}
+ */
+var calculateMinimumHP = (dungeon) => {
+    if (dungeon.length === 0) return 1;
+    let map = [];
+    let i = dungeon.length - 1;
+    let j = dungeon[0].length - 1;
+    
+    for (let m = 0; m <= i; m++) map[m] = [];
+    
+    while (i >= 0 && j >= 0) {
+        if (i === dungeon.length - 1 && j === dungeon[0].length - 1) {
+            map[i][j] = 1 - dungeon[i][j] <= 0 ? 1 : 1 - dungeon[i][j];
+        } else if (i === dungeon.length - 1) {
+            map[i][j] = map[i][j + 1] - dungeon[i][j] <= 0 ? 1 : map[i][j + 1] - dungeon[i][j];
+        } else if (j === dungeon[0].length - 1) {
+            map[i][j] = map[i + 1][j] - dungeon[i][j] <= 0 ? 1 : map[i + 1][j] - dungeon[i][j];
+        } else {
+            let hp = Math.min(map[i][j + 1], map[i + 1][j]) - dungeon[i][j];
+            map[i][j] = hp <= 0 ? 1 : hp;
+        }
+        j === 0 ? (j = dungeon[0].length - 1, i--) : j--;
+    }
+    return map[0][0];
+};
